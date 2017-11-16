@@ -1,0 +1,302 @@
+<html class="fa-events-icons-ready"><head>
+	<title>TEDxBVCOE Speaker Nomination</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+	
+
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+	<script type="text/javascript" src="jquery.js"></script>
+
+	<script type="text/javascript" src="script.js"></script>
+	<link rel="icon" href="image/favicon.png">
+	<script src="https://use.fontawesome.com/ae71f5ebfe.js"></script><link href="https://use.fontawesome.com/ae71f5ebfe.css" media="all" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Hind+Siliguri:300,400,500,600|Raleway:300,400,600,700" rel="stylesheet">
+	<script>
+	function validateEmail()
+	{
+		var uemail=document.forms["myForm"]["nominatorEmail"].value;
+		var mailformat = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;  
+		var errorstatus=document.getElementById("emailerror");
+
+		if(mailformat.test(uemail)) 
+		{  
+			errorstatus.style.visibility="hidden";
+			return true;  
+		}else  
+		{  
+				errorstatus.style.visibility="visible";
+				//prompt("You have entered an invalid email address!");  
+					uemail.focus();  
+			return false;  
+		}  
+
+	}
+	function validatenEmail()
+	{
+		var uemail=document.forms["myForm"]["nomineeEmail"].value;
+		var mailformat = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;  
+		var errorstatus=document.getElementById("nemailerror");
+
+		if(mailformat.test(uemail)) 
+		{  
+			errorstatus.style.visibility="hidden";
+			return true;  
+		}else  
+		{  
+				errorstatus.style.visibility="visible";
+				//prompt("You have entered an invalid email address!");  
+					uemail.focus();  
+			return false;  
+		}  
+
+	}
+	function validateContact()
+	{
+		var num=document.forms["myForm"]["nominatorNumber"].value;
+		var errorstatus=document.getElementById("numerror");
+		if((num>999999999)&&(num<10000000000)) 
+		{  
+			errorstatus.style.visibility="hidden";
+			return true;  
+		}else  
+		{  
+				errorstatus.style.visibility="visible";
+			//	prompt("You have entered an invalid contact number!");  
+					num.focus();  
+			return false;  
+		}  
+	}
+		function validatenContact()
+	{
+		var num=document.forms["myForm"]["nomineeNumber"].value;
+		var errorstatus=document.getElementById("nnumerror");
+			if((num>999999999)&&(num<10000000000)) 
+		{  
+			errorstatus.style.visibility="hidden";
+			return true;  
+		}else  
+		{  
+				errorstatus.style.visibility="visible";
+				//prompt("You have entered an invalid contact number!");  
+					num.focus();  
+			return false;  
+		}  
+	}
+
+function formSubmit()
+	{
+		if(validated==true)
+		{	
+			document.getElementById("myForm").submit();
+			return true;
+		}	
+		else
+			return false;
+
+	}
+	</script>
+	<style>
+	#emailerror{
+		visibility:hidden;
+		color:#cc3300		
+	}
+	#numerror{
+		visibility:hidden;
+		color:#cc3300
+	}
+	#nemailerror{
+		visibility:hidden;
+		color:#cc3300		
+	}
+	#nnumerror{
+		visibility:hidden;
+		color:#cc3300
+	}
+	</style>
+</head>
+
+
+
+
+<body style="" cz-shortcut-listen="true"><!-- colorzilla extension -->
+	<nav>
+		<div class="content">
+			<div class="logo"><a href ="https://www.ted.com/tedx/events/24662"><img src="logo.png" draggable="false"></a></div>
+			
+				<div class="title">Nominate a speaker.</div>
+			
+			<hr>
+			<div class="subtitle">
+				Fill out this form to nominate a speaker for TEDxBVCOE 2018.
+			</div>
+			<br>
+		</div>
+		<div class="">
+
+			<div class="tab-one tab current">
+				<div class="form-section"><i class="fa fa-user-o" aria-hidden="true"></i>Nominator</div>
+				<svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#check"></use></svg>
+			</div>
+			<div class="tab-two tab disabled">
+				<div class="form-section"><i class="fa fa-microphone" aria-hidden="true"></i>Nominee</div>
+				<svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#check"></use></svg>
+			</div>
+			<div class="tab-three tab disabled">
+				<div class="form-section"><i class="fa fa-id-card-o" aria-hidden="true"></i>Details</div>
+				<svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#check"></use></svg>
+			</div>
+			<div class="tab-four tab disabled">
+				<div class="form-section"><i class="fa fa-link" aria-hidden="true"></i>References</div>
+				<svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#check"></use></svg>
+			</div>
+
+		</div>
+	</nav>
+<!-- Navigation bars -->
+
+
+
+	<div class="form-area">
+		<header>
+			<div class="mobile-wrapper">
+				<div class="logo"><img src="logo2.png" draggable="false"></div>
+				
+					<div class="mobile-title">Nominate a speaker.</div>
+				
+				<div class="mobile-section-number">Section 1 / 4</div>	
+			</div>	
+		</header>
+		<form name="myForm" method="POST" action="formHandler.php" onsubmit="return formSubmit()">
+			
+			<!--NOMINATOR SECTION-->
+
+			<section class="nominator active-section">
+				<div class="section-title">
+					<i class="fa fa-user-o" aria-hidden="true"></i>
+					Nominator Details
+				</div>
+				<div class="section-subtitle">Basic information about the nominator.</div>			
+				<div class="field required">Full Name</div>
+				
+				<input name="nominatorName" id="n-full-name" type="text" placeholder="Enter full name" value="" >
+				<div class="field required">E-Mail</div>
+				
+				<input name="nominatorEmail" id="n-email" type="email" placeholder="Enter e-mail address" value="" onchange="validateEmail()"> <div id="emailerror" >Invalid Email id</div>
+				<div class="field required">Contact Number</div>
+				
+				<input name="nominatorNumber" id="n-phone" type="tel" placeholder="Enter phone number" value="" onchange="validateContact()">
+				<div id="numerror" >Invalid Contact Number</div>
+				<div class="button disabled sec-one-button"><i class="fa fa-check" aria-hidden="true"></i> Done</div>
+			</section>
+
+			<!--NOMINEE SECTION-->
+			<section class="nominee">
+				<div class="section-title">
+					<i class="fa fa-microphone" aria-hidden="true"></i>
+					Nominee Details
+				</div>
+				<div class="section-subtitle">Who do you wish to nominate as a speaker?</div>
+				<div class="checkbox">
+					<div class="box"><i class="check fa fa-check" aria-hidden="true"></i></div>
+					I wish to nominate myself.
+				</div>
+				<div class="nominee-wrapper">
+					<div class="field required">Full Name</div>
+					
+					<input name="nomineeName" id="s-full-name" type="text" placeholder="Enter full name" value="">
+					<div class="field">E-Mail</div>
+					
+					<input name="nomineeEmail" id="s-email" type="text" placeholder="Enter e-mail address" value="" onchange="validatenEmail()"> <div id="nemailerror" >Invalid Email id</div>
+
+					<div class="field">Contact Number</div>
+					
+					<input name="nomineeNumber" id="s-phone" type="text" placeholder="Enter phone number" value="" onchange="validatenContact()"><div id="nnumerror" >Invalid Contact Number</div>
+				</div>
+				<div class="button disabled sec-two-button"><i class="fa fa-check" aria-hidden="true"></i> Done</div>
+			</section>
+
+			<!--DETAILS SECTION-->
+			<section class="details">
+				<div class="section-title">
+					<i class="fa fa-id-card-o" aria-hidden="true"></i>
+					Additional Details
+				</div>
+				<div class="section-subtitle">Some additional details about the nominee.</div>
+				<div class="field required">City</div>
+				
+				<input name="nomineeCity" id="s-city" type="text" placeholder="Enter city name" value="">
+				<div class="field required">Country</div>
+				
+				<input name="nomineeCountry" id="s-country" type="text" placeholder="Enter country name" value="">
+				<div class="radio-wrapper" id="genderFields">
+					<div class="field required">Gender</div>
+					
+					<div class="option"><input type="radio" name="nomineeGender" value="Male" id="Male"><label for="Male">Male</label></div>
+					<div class="option"><input type="radio" name="nomineeGender" value="Female" id="Female"><label for="Female">Female</label></div>
+					<div class="option"><input type="radio" name="nomineeGender" value="Other" id="Other" checked=""><label for="Other">Other</label></div>
+					
+					
+				</div>
+				<div class="radio-wrapper" id="Person">
+					<div class="field required">Do you know the nominee personally?</div>
+					
+					<div class="option"><input type="radio" name="nomineeKnowPersonally" value="Yes" id="Yes"><label for="Yes">Yes</label></div>
+					<div class="option"><input type="radio" name="nomineeKnowPersonally" value="No" id="No" checked=""><label for="No">No</label></div>
+					
+
+				</div>
+				<div class="field required">About</div>
+				<div class="field-description">Tell us briefly about the nominee. What's their occupation? Any honors or distinctions? Their recent work? Why are you recommending them?</div>
+				
+				<textarea name="nomineeWhyRecommend" id="s-brief" placeholder="Your response" value=""></textarea>
+				<div class="field-description">What might their TEDx talk be about?</div>
+				
+				<textarea name="nomineeWhatTalk" id="s-talk" placeholder="Your response" value=""></textarea>
+				
+				<div class="field-description">Have they spoken publicly before? If so, where?</div>
+				
+				<textarea name="nomineeWhereSpoken" id="s-experience" placeholder="Your response" value=""></textarea>
+				
+				<div class="button disabled sec-three-button"><i class="fa fa-check" aria-hidden="true"></i> Done</div>
+			</section>
+
+			<!--LINKS SECTION-->
+			<section class="links">
+				<div class="section-title">
+					<i class="fa fa-link" aria-hidden="true"></i>
+					References
+				</div>
+				<div class="section-subtitle">Some references for our consideration.</div>
+				<div class="field">Links</div>
+				<div class="field-description">Please provide links to online videos or audios featuring the nominee</div>
+				<div class="video-links">
+					
+					<input name="nomineeVideoLink1" id="vlink-1" type="text" placeholder="Enter link">
+				</div>
+				<div class="add-more videos"><i class="fa fa-plus-circle fa-lg" aria-hidden="true"></i> Add More</div>
+				
+				<div class="field-description">Please provide links to any articles or web pages about the nominee.</div>
+				<div class="article-links">
+					
+					<input name="nomineeArticleLink1" id="alink-1" type="text" placeholder="Enter link">
+				</div>
+				<div class="add-more articles"><i class="fa fa-plus-circle fa-lg" aria-hidden="true"></i> Add More</div>
+				
+				<div class="field-description">Link to nominee's LinkedIn profile.</div>
+				
+				<input name="nomineeLinkedInProfile" id="linkedinlink" type="text" placeholder="Enter link">
+				
+				<input type="submit" value="Submit">
+			</section>
+
+			<section class="thanks">
+				<div class="final"><i class="fa fa-check fa-lg" aria-hidden="true"></i> Thank you. Your response has been submitted.</div>
+			</section>
+		</form>
+	</div>
+	<div class="hidden-svgs">
+		<svg id="check" fill="#32a67b" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-1.25 17.292l-4.5-4.364 1.857-1.858 2.643 2.506 5.643-5.784 1.857 1.857-7.5 7.643z"></path></svg>
+	</div>
+
+
+</body></html>

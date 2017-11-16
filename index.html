@@ -1,254 +1,300 @@
-<!DOCTYPE html>
-<html>
-     <head>
-      <title>
-      </title>
-      <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
-       <meta charset="utf-8">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<html class="fa-events-icons-ready"><head>
+	<title>TEDxBVCOE Speaker Nomination</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+	
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  
-      
-      
-      <script>
-		  
+	<link rel="stylesheet" type="text/css" href="style.css">
+<script> var validated=false;</script>
+	<script type="text/javascript" src="jquery.js"></script>
 
-          window.onload=function myMove() {
-          var w1 = document.getElementById("wave2");
-		  var w2 = document.getElementById("wave4");			  
-          var p1 = -600;
-		  var p2 = -600;
-			   
-          var id = setInterval(wave1, 60);
-       
-          function wave1() {
-          if (p1 == 0) {
-              p1=-600;		
-		
-             } 
-	      else  {
-			     wave2();
-                 p1++;  
-                 w1.style.left = p1 + 'px';
-             }		
-           }
-			  
-			  
-		  function wave2() {
-          if (p2 == 0) {
-              p2=-600;		
-		
-             } 
-	      else  {
-                 p2++;  
-                 w2.style.left = p2 + 'px';
-             }		
-           }
-			 		  
-          }
-		   
-		  
-</script>
-      
-      
-      
-      
-      <style>
-		  
+	<script type="text/javascript" src="script.js"></script>
+	<link rel="icon" href="image/favicon.png">
+	<script src="https://use.fontawesome.com/ae71f5ebfe.js"></script><link href="https://use.fontawesome.com/ae71f5ebfe.css" media="all" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Hind+Siliguri:300,400,500,600|Raleway:300,400,600,700" rel="stylesheet">
+	<script>
+	function validateEmail()
+	{
+		var uemail=document.forms["myForm"]["nominatorEmail"].value;
+		var mailformat = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;  
+		var errorstatus=document.getElementById("emailerror");
 
-		  body{
-			  background-color: #021014;
-              margin: 0;
-			 overflow: hidden;
-			  
-		  }
-		 
-		  #bg{         
-			  width: 100vw;
-			  height: auto;
-			  
-		  }
-		  
-		  
-	      #logo{
-			width: 280px;
-			height: 80px;
-             position: fixed;
-             left: 50%;
-             top: 2%;
-             transform: translate(-50%, 0);
-			 border:0;
-  
-		  }
-		  
-		  
-	      button {
-                 
-			 
-			 z-index: 100; 
-			 position: absolute;
-             left: 45%;
-             top: 35px;
-             background: #FE2B06;
-             width: 160px;
-             border-radius: 40px;
-             border: 0;
-	         padding: 5px 5px 5px;
-             outline: none;
-             color: #FFF;
-             font-weight: 600;
-             font-size: 1em;
-             cursor: pointer;
-             box-shadow: 0 5px 0px rgba(0, 0, 0, 0.2);
-             white-space: normal;
-		  }
-    
-		
-		  button:hover {
-            
-			 box-shadow: 0 5px 0px rgba(0, 0, 0, 0.3); 
-		  }
-  
-		 
-		  
-		  #ship{
-			  
-			 
-			  
-			 z-index: 1; 
-			 width: 50vw;
-             position: absolute;
-             left: 42%;
-             bottom: 0%;
-			 transform: translate(-50%, 0);
-     -webkit-transition: all 0.5s ease;
-        -moz-transition: all 0.5s ease;
-         -ms-transition: all 0.5s ease;
+		if(mailformat.test(uemail)) 
+		{  
+		errorstatus.style.visibility="hidden";
+			return true;  
+		}else  
+		{  
+				errorstatus.style.visibility="visible";
+				//prompt("You have entered an invalid email address!");  
+					uemail.focus();  
+			return false;  
+		}  
 
-  
-			  
-		  }
-		  
-		  #main{
-			  position: fixed;
-			  width: 100%;
-			  height: auto;
-			  top: 40%;
-			  bottom: 0px;
+	}
+	function validatenEmail()
+	{
+		var uemail=document.forms["myForm"]["nomineeEmail"].value;
+		var mailformat = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;  
+		var errorstatus=document.getElementById("nemailerror");
+
+		if(mailformat.test(uemail)) 
+		{  errorstatus.style.visibility="hidden";
+			return true;  
+		}else  
+		{  
+				errorstatus.style.visibility="visible";
+				//prompt("You have entered an invalid email address!");  
+					uemail.focus();  
+			return false;  
+		}  
+
+	}
+	function validateContact()
+	{
+		var num=document.forms["myForm"]["nominatorNumber"].value;
+		var errorstatus=document.getElementById("numerror");
+		if((num>999999999)&&(num<10000000000)) 
+		{  
+			errorstatus.style.visibility="hidden";
+			console.log(section);
+			return true;  
+		}else  
+		{  
+				errorstatus.style.visibility="visible";
+			//	prompt("You have entered an invalid contact number!");  
+					num.focus();  
+			return false;  
+		}  
+	}
+		function validatenContact()
+	{
+		var num=document.forms["myForm"]["nomineeNumber"].value;
+		var errorstatus=document.getElementById("nnumerror");
+			if((num>999999999)&&(num<10000000000)) 
+		{  
+		errorstatus.style.visibility="hidden";
+			return true;  
+		}else  
+		{  
+				errorstatus.style.visibility="visible";
+				//prompt("You have entered an invalid contact number!");  
+					num.focus();  
+			return false;  
+		}  
+	}
+	function formSubmit()
+	{
+		if(validated==true)
+		{	
+			document.getElementById("myForm").submit();
+			return true;
+		}	
+		else
+			return false;
+
+	}
+	</script>
+	<style>
+	#emailerror{
+		visibility:hidden;
+		color:#cc3300		
+	}
+	#numerror{
+		visibility:hidden;
+		color:#cc3300
+	}
+	#nemailerror{
+		visibility:hidden;
+		color:#cc3300		
+	}
+	#nnumerror{
+		visibility:hidden;
+		color:#cc3300
+	}
+	</style>
+</head>
+
+
+
+
+<body style="" cz-shortcut-listen="true"><!-- colorzilla extension -->
+	<nav>
+		<div class="content">
+			<div class="logo"><img src="logo.png" draggable="false"></div>
 			
-			  
+				<div class="title">Nominate a speaker.</div>
+			
+			<hr>
+			<div class="subtitle">
+				Fill out this form to nominate a speaker for TEDxBVCOE 2017.
+			</div>
+		</div>
+		<div class="">
+
+			<div class="tab-one tab current">
+				<div class="form-section"><i class="fa fa-user-o" aria-hidden="true"></i>Nominator</div>
+				<svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#check"></use></svg>
+			</div>
+			<div class="tab-two tab disabled">
+				<div class="form-section"><i class="fa fa-microphone" aria-hidden="true"></i>Nominee</div>
+				<svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#check"></use></svg>
+			</div>
+			<div class="tab-three tab disabled">
+				<div class="form-section"><i class="fa fa-id-card-o" aria-hidden="true"></i>Details</div>
+				<svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#check"></use></svg>
+			</div>
+			<div class="tab-four tab disabled">
+				<div class="form-section"><i class="fa fa-link" aria-hidden="true"></i>References</div>
+				<svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#check"></use></svg>
+			</div>
+
+		</div>
+	</nav>
+<!-- Navigation bars -->
+
+
+
+	<div class="form-area">
+		<header>
+			<div class="mobile-wrapper">
+				<div class="logo"><img src="logo2.png" draggable="false"></div>
 				
-			  
-			  
-		  }
-		  
-		  #wave1{
-			  z-index: 0;
-			  
-		  }
-		  
-		  #wave2{
-			  z-index: 2;
-		
-		  }
-		  
-		  #wave3{
-			  z-index: 3;
-			  
-			  
-		  }
-		  
-		  #wave4{
-			  z-index: 4;
-			  
-		  }
-		  
-		  .wave{
-			  position: absolute;
-			  width: 290%;			   
-			  bottom: 0px;
-			  
-		  }
-		  
-		  .fa {
-  padding: 20px;
-  font-size: 30px;
-  width: 50px;
-  text-align: center;
-  text-decoration: none;
-  margin: 5px 2px;
-}
-
-.fa:hover {
-    opacity: 0.7;
-}
-
-.fa-facebook {
-  background: rgba(0,0,0,0);
-  color: white;
-}
-
-.fa-instagram {
-  background: rgba(0,0,0,0);
-  color: white;
-}
-.fa-twitter{
-background: rgba(0,0,0,0);
-  color: white;
-}
-.top-left{
-  position: fixed;
-    top: 8px;
-    left: 16px;
-}	  
-.waves{
-
-margin-bottom:0;
-}		  
-	 
-       
-      </style>
-      </head>
-      
-      <body>
-              <img id="bg" src="bg1.png">
-			  <div class="container-fluid">
-			  
-              <center><img id="logo" src="logo2.png" class="img-responsive"></center>
-			  <div class="top-left">
-               <a href="https://www.facebook.com/tedxbvcoe/" class="fa fa-facebook"></a>
-			   <a href="https://www.instagram.com/TEDxBVCOE/" class="fa fa-instagram"></a>
-			   <a href="https://twitter.com/tedxbvcoe" class="fa fa-twitter"></a>
-			   </div>
-			  
-			  
-			  
- 
-              <div id="main">
-			  
-			  <a href="form/form.html"><button>Here</button></a>
-			 
-
+					<div class="mobile-title">Nominate a speaker.</div>
+				
+				<div class="mobile-section-number">Section 1 / 4</div>	
+			</div>	
+		</header>
+		<form name="myForm" id="myForm" method="POST" action="formHandler.php" onsubmit="return formSubmit()">
 			
-              <img id="ship" src="1.png">
-             
-			 
-              <img class="wave" id="wave1" src="0.png">
-              <img class="wave" id="wave2" src="2.png">
-              <img class="wave" id="wave3" src="3.png">
-              <img class="wave" id="wave4" src="4.png">
-            
-              </div>
-			 </div>
-            
-              
-		  
-              
+			<!--NOMINATOR SECTION-->
 
-          
-      </body>
+			<section class="nominator active-section">
+				<div class="section-title">
+					<i class="fa fa-user-o" aria-hidden="true"></i>
+					Nominator Details
+				</div>
+				<div class="section-subtitle">Basic information about the nominator.</div>			
+				<div class="field required">Full Name</div>
+				
+				<input name="nominatorName" id="n-full-name" type="text" placeholder="Enter full name" value="" >
+				<div class="field required">E-Mail</div>
+				
+				<input name="nominatorEmail" id="n-email" type="email" placeholder="Enter e-mail address" value="" onchange="validateEmail()"> <div id="emailerror" >Invalid Email id</div>
+				<div class="field required">Contact Number</div>
+				
+				<input name="nominatorNumber" id="n-phone" type="tel" placeholder="Enter phone number" value="" onchange="validateContact()">
+				<div id="numerror" >Invalid Contact Number</div>
+				<div class="button disabled sec-one-button"><i class="fa fa-check" aria-hidden="true"></i> Done</div>
+			</section>
 
-</html>
+			<!--NOMINEE SECTION-->
+			<section class="nominee">
+				<div class="section-title">
+					<i class="fa fa-microphone" aria-hidden="true"></i>
+					Nominee Details
+				</div>
+				<div class="section-subtitle">Who do you wish to nominate as a speaker?</div>
+				<div class="checkbox">
+					<div class="box"><i class="check fa fa-check" aria-hidden="true"></i></div>
+					I wish to nominate myself.
+				</div>
+				<div class="nominee-wrapper">
+					<div class="field required">Full Name</div>
+					
+					<input name="nomineeName" id="s-full-name" type="text" placeholder="Enter full name" value="">
+					<div class="field">E-Mail</div>
+					
+					<input name="nomineeEmail" id="s-email" type="text" placeholder="Enter e-mail address" value="" onchange="validatenEmail()"> <div id="nemailerror" >Invalid Email id</div>
+
+					<div class="field">Contact Number</div>
+					
+					<input name="nomineeNumber" id="s-phone" type="text" placeholder="Enter phone number" value="" onchange="validatenContact()"><div id="nnumerror" >Invalid Contact Number</div>
+				</div>
+				<div class="button disabled sec-two-button"><i class="fa fa-check" aria-hidden="true"></i> Done</div>
+			</section>
+
+			<!--DETAILS SECTION-->
+			<section class="details">
+				<div class="section-title">
+					<i class="fa fa-id-card-o" aria-hidden="true"></i>
+					Additional Details
+				</div>
+				<div class="section-subtitle">Some additional details about the nominee.</div>
+				<div class="field required">City</div>
+				
+				<input name="nomineeCity" id="s-city" type="text" placeholder="Enter city name" value="">
+				<div class="field required">Country</div>
+				
+				<input name="nomineeCountry" id="s-country" type="text" placeholder="Enter country name" value="">
+				<div class="radio-wrapper" id="genderFields">
+					<div class="field required">Gender</div>
+					
+					<div class="option"><input type="radio" name="nomineeGender" value="Male" id="Male"><label for="Male">Male</label></div>
+					<div class="option"><input type="radio" name="nomineeGender" value="Female" id="Female"><label for="Female">Female</label></div>
+					<div class="option"><input type="radio" name="nomineeGender" value="Other" id="Other" checked=""><label for="Other">Other</label></div>
+					
+					
+				</div>
+				<div class="radio-wrapper" id="Person">
+					<div class="field required">Do you know the nominee personally?</div>
+					
+					<div class="option"><input type="radio" name="nomineeKnowPersonally" value="Yes" id="Yes"><label for="Yes">Yes</label></div>
+					<div class="option"><input type="radio" name="nomineeKnowPersonally" value="No" id="No" checked=""><label for="No">No</label></div>
+					
+
+				</div>
+				<div class="field required">About</div>
+				<div class="field-description">Tell us briefly about the nominee. What's their occupation? Any honors or distinctions? Their recent work? Why are you recommending them?</div>
+				
+				<textarea name="nomineeWhyRecommend" id="s-brief" placeholder="Your response" value=""></textarea>
+				<div class="field-description">What might their TEDx talk be about?</div>
+				
+				<textarea name="nomineeWhatTalk" id="s-talk" placeholder="Your response" value=""></textarea>
+				
+				<div class="field-description">Have they spoken publicly before? If so, where?</div>
+				
+				<textarea name="nomineeWhereSpoken" id="s-experience" placeholder="Your response" value=""></textarea>
+				
+				<div class="button disabled sec-three-button"><i class="fa fa-check" aria-hidden="true"></i> Done</div>
+			</section>
+
+			<!--LINKS SECTION-->
+			<section class="links">
+				<div class="section-title">
+					<i class="fa fa-link" aria-hidden="true"></i>
+					References
+				</div>
+				<div class="section-subtitle">Some references for our consideration.</div>
+				<div class="field">Links</div>
+				<div class="field-description">Please provide links to online videos or audios featuring the nominee</div>
+				<div class="video-links">
+					
+					<input name="nomineeVideoLink1" id="vlink-1" type="text" placeholder="Enter link">
+				</div>
+				<div class="add-more videos"><i class="fa fa-plus-circle fa-lg" aria-hidden="true"></i> Add More</div>
+				
+				<div class="field-description">Please provide links to any articles or web pages about the nominee.</div>
+				<div class="article-links">
+					
+					<input name="nomineeArticleLink1" id="alink-1" type="text" placeholder="Enter link">
+				</div>
+				<div class="add-more articles"><i class="fa fa-plus-circle fa-lg" aria-hidden="true"></i> Add More</div>
+				
+				<div class="field-description">Link to nominee's LinkedIn profile.</div>
+				
+				<input name="nomineeLinkedInProfile" id="linkedinlink" type="text" placeholder="Enter link">
+				
+				<input type="submit" value="Submit">
+			</section>
+
+			<section class="thanks">
+				<div class="final"><i class="fa fa-check fa-lg" aria-hidden="true"></i> Thank you. Your response has been submitted.</div>
+			</section>
+		</form>
+	</div>
+	<div class="hidden-svgs">
+		<svg id="check" fill="#32a67b" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-1.25 17.292l-4.5-4.364 1.857-1.858 2.643 2.506 5.643-5.784 1.857 1.857-7.5 7.643z"></path></svg>
+	</div>
+
+
+</body></html>
