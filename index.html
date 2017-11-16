@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+     <head>
+      <title>
+      </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+       <meta charset="utf-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+      
+      
+      <script>
+		  
+
+          window.onload=function myMove() {
+          var w1 = document.getElementById("wave2");
+		  var w2 = document.getElementById("wave4");			  
+          var p1 = -600;
+		  var p2 = -600;
+			   
+          var id = setInterval(wave1, 60);
+       
+          function wave1() {
+          if (p1 == 0) {
+              p1=-600;		
+		
+             } 
+	      else  {
+			     wave2();
+                 p1++;  
+                 w1.style.left = p1 + 'px';
+             }		
+           }
+			  
+			  
+		  function wave2() {
+          if (p2 == 0) {
+              p2=-600;		
+		
+             } 
+	      else  {
+                 p2++;  
+                 w2.style.left = p2 + 'px';
+             }		
+           }
+			 		  
+          }
+		   
+		  
+</script>
+      
+      
+      
+      
+      <style>
+		  
+
+		  body{
+			  background-color: #021014;
+              margin: 0;
+			 overflow: hidden;
+			  
+		  }
+		 
+		  #bg{         
+			  width: 100vw;
+			  height: auto;
+			  
+		  }
+		  
+		  
+	      #logo{
+			width: 280px;
+			height: 80px;
+             position: fixed;
+             left: 50%;
+             top: 2%;
+             transform: translate(-50%, 0);
+			 border:0;
+  
+		  }
+		  
+		  
+	      button {
+                 
+			 
+			 z-index: 100; 
+			 position: absolute;
+             left: 45%;
+             top: 35px;
+             background: #FE2B06;
+             width: 160px;
+             border-radius: 40px;
+             border: 0;
+	         padding: 5px 5px 5px;
+             outline: none;
+             color: #FFF;
+             font-weight: 600;
+             font-size: 1em;
+             cursor: pointer;
+             box-shadow: 0 5px 0px rgba(0, 0, 0, 0.2);
+             white-space: normal;
+		  }
+    
+		
+		  button:hover {
+            
+			 box-shadow: 0 5px 0px rgba(0, 0, 0, 0.3); 
+		  }
+  
+		 
+		  
+		  #ship{
+			  
+			 
+			  
+			 z-index: 1; 
+			 width: 50vw;
+             position: absolute;
+             left: 42%;
+             bottom: 0%;
+			 transform: translate(-50%, 0);
+     -webkit-transition: all 0.5s ease;
+        -moz-transition: all 0.5s ease;
+         -ms-transition: all 0.5s ease;
+
+  
+			  
+		  }
+		  
+		  #main{
+			  position: fixed;
+			  width: 100%;
+			  height: auto;
+			  top: 40%;
+			  bottom: 0px;
+			
+			  
+				
+			  
+			  
+		  }
+		  
+		  #wave1{
+			  z-index: 0;
+			  
+		  }
+		  
+		  #wave2{
+			  z-index: 2;
+		
+		  }
+		  
+		  #wave3{
+			  z-index: 3;
+			  
+			  
+		  }
+		  
+		  #wave4{
+			  z-index: 4;
+			  
+		  }
+		  
+		  .wave{
+			  position: absolute;
+			  width: 290%;			   
+			  bottom: 0px;
+			  
+		  }
+		  
+		  .fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+  background: rgba(0,0,0,0);
+  color: white;
+}
+
+.fa-instagram {
+  background: rgba(0,0,0,0);
+  color: white;
+}
+.fa-twitter{
+background: rgba(0,0,0,0);
+  color: white;
+}
+.top-left{
+  position: fixed;
+    top: 8px;
+    left: 16px;
+}	  
+.waves{
+
+margin-bottom:0;
+}		  
+	 
+       
+      </style>
+      </head>
+      
+      <body>
+              <img id="bg" src="bg1.png">
+			  <div class="container-fluid">
+			  
+              <center><img id="logo" src="logo2.png" class="img-responsive"></center>
+			  <div class="top-left">
+               <a href="https://www.facebook.com/tedxbvcoe/" class="fa fa-facebook"></a>
+			   <a href="https://www.instagram.com/TEDxBVCOE/" class="fa fa-instagram"></a>
+			   <a href="https://twitter.com/tedxbvcoe" class="fa fa-twitter"></a>
+			   </div>
+			  
+			  
+			  
+ 
+              <div id="main">
+			  
+			  <a href="form/form.html"><button>Here</button></a>
+			 
+
+			
+              <img id="ship" src="1.png">
+             
+			 
+              <img class="wave" id="wave1" src="0.png">
+              <img class="wave" id="wave2" src="2.png">
+              <img class="wave" id="wave3" src="3.png">
+              <img class="wave" id="wave4" src="4.png">
+            
+              </div>
+			 </div>
+            
+              
+		  
+              
+
+          
+      </body>
+
+</html>
